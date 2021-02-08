@@ -71,7 +71,6 @@ func write(cliStreamer CliStreamerRecord, presentRunner int64, wg *sync.WaitGrou
 
 		output := cliStreamer.Title + "->" + cliStreamer.Message1 + " " + "instance " + strconv.FormatInt(presentRunner+1, 10) + "\n" + cliStreamer.Title + "->" + cliStreamer.Message2 + " " + "instance " + strconv.FormatInt(presentRunner+1, 10) + "\n"
 
-		//_, err = fmt.Fprintln(f, output)
 		_, err = f.WriteString(output)
 
 		if err != nil {
@@ -109,23 +108,6 @@ func (cliRunner CliRunnerRecord) streamAndWrite() {
 }
 
 func main() {
-
-	/*	input := os.Args[1:]
-		fmt.Println(input)
-		fmt.Printf("%T\n", input[2])
-
-		args := strings.Join(input, " ")
-		fmt.Println(args)
-
-		formattedArgs := strings.Split(args, "\\n")
-		fmt.Println(formattedArgs)
-		fmt.Println(len(formattedArgs))
-		//fmt.Printf("%T\n", formattedArgs[1])
-		//formattedArgs[1]
-		individualInput := strings.Split(formattedArgs[1], ",")
-		fmt.Println(len(individualInput))
-		delay, _ := strconv.ParseInt(individualInput[5], 10, 64)
-		fmt.Printf("%T\n", delay)*/
 
 	StreamerRecord := inputArgs()
 	fmt.Println(StreamerRecord[0].Runner)
