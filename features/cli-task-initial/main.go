@@ -98,7 +98,7 @@ func individualStream(cliStreamer CliStreamerRecord) {
 		go write(cliStreamer, i, &wg, &lock)
 	}
 	wg.Wait()
-	time.Sleep(2000 * time.Millisecond)
+	//time.Sleep(2000 * time.Millisecond)
 }
 
 func (cliRunner CliRunnerRecord) streamAndWrite() {
