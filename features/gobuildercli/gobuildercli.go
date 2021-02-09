@@ -50,7 +50,6 @@ func build(buildName string) {
 
 func buildInPath(buildName string, path string) {
 	posh := New()
-	fmt.Println(path)
 	stdout, stderr, err := posh.Execute("cd " + path + "\ngo build -o " + buildName + " test.go")
 
 	fmt.Println(stdout)
@@ -177,17 +176,15 @@ func settingArguments(input []string) (string, string, string, bool) {
 	}
 
 	/*	if input[presentIndex] == "-exclude-tests" {
-		excludeTests = true
-		presentIndex += 2
-	}*/
-
+			excludeTests = true
+			presentIndex += 2
+		}
+	*/
 	return copyPath, sourcePath, buildName, excludeTests
 }
 
 func main() {
 	input := os.Args[1:]
-	fmt.Println(input)
-	fmt.Println(len(input))
 
 	path, _ := os.Getwd()
 	dstPath := "F:\\job\\evatix\\phase 2\\Golang-Project\\features"
@@ -203,8 +200,6 @@ func main() {
 
 	destination := dstPath + "\\" + copyPath
 	source := path + "\\" + sourcePath
-
-	fmt.Println(excludeTests)
 
 	if sourcePath != copyPath {
 		err := CopyDir(source, destination, excludeTests)
