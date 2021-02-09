@@ -175,11 +175,11 @@ func settingArguments(input []string) (string, string, string, bool) {
 		presentIndex += 2
 	}
 
-	/*	if input[presentIndex] == "-exclude-tests" {
-			excludeTests = true
-			presentIndex += 2
-		}
-	*/
+	if input[presentIndex] == "-exclude-tests" {
+		excludeTests = true
+		presentIndex += 2
+	}
+
 	return copyPath, sourcePath, buildName, excludeTests
 }
 
